@@ -1,0 +1,128 @@
+
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="theme-color" content="#f8f7f3">
+  <title>Dog Gallery | Galería de perros</title>
+  <link rel="stylesheet" href="styles.css">
+  <script src="script.js" defer></script>
+</head>
+<body>
+  <header class="header">
+    <div class="container navbar">
+      <a href="#" class="logo">🐾 Dog<span>Gallery</span></a>
+      <p>Un mundo de perros, una foto a la vez.</p>
+    </div>
+  </header>
+
+  <main class="container">
+    <section class="intro">
+      <span class="eyebrow">TU RINCÓN PERRUNO</span>
+      <h1>Encuentra tu próximo favorito.</h1>
+      <p>
+        Descubre perros de todo el mundo, explora distintas razas
+        y guarda las fotografías que más te gusten.
+      </p>
+    </section>
+
+    <nav class="tabs">
+      <button class="tab active" data-section="random">✨ Descubrir</button>
+      <button class="tab" data-section="breeds">🐕 Por raza</button>
+      <button class="tab" data-section="favorites">
+        ♥ Favoritos <span id="favorite-count">0</span>
+      </button>
+    </nav>
+
+    <!-- PERRO ALEATORIO -->
+    <section id="random-section" class="page-section">
+      <div class="section-heading">
+        <div>
+          <h2>Tu perro del momento</h2>
+          <p>Una nueva sorpresa cada vez que quieras.</p>
+        </div>
+        <button id="random-button" class="btn btn-primary">
+          ↻ Cambiar de perro
+        </button>
+      </div>
+
+      <article class="hero-card">
+        <div class="hero-image">
+          <img id="hero-img" src="" alt="Perro aleatorio">
+        </div>
+
+        <div class="hero-content">
+          <span class="badge">DESCUBRIMIENTO DEL DÍA</span>
+          <h2 id="hero-name">Buscando un amigo...</h2>
+          <p id="hero-description">
+            Estamos preparando una sorpresa para ti.
+          </p>
+
+          <div class="hero-actions">
+            <button id="another-button" class="btn btn-primary">
+              Ver otro perro →
+            </button>
+            <button
+              id="hero-favorite"
+              class="heart-button"
+              aria-label="Añadir a favoritos"
+            >♡</button>
+          </div>
+        </div>
+      </article>
+    </section>
+
+    <!-- BUSCAR POR RAZA -->
+    <section id="breeds-section" class="page-section hidden">
+      <div class="section-heading">
+        <div>
+          <h2>Explora por raza</h2>
+          <p>Encuentra fotografías de tus razas favoritas.</p>
+        </div>
+      </div>
+
+      <div class="search-panel">
+        <select id="breed-select" aria-label="Seleccionar raza">
+          <option value="">Cargando razas...</option>
+        </select>
+        <button id="search-button" class="btn btn-primary">
+          Buscar imágenes
+        </button>
+      </div>
+
+      <div class="section-heading">
+        <div>
+          <h2 id="breed-title">Galería de razas</h2>
+          <p id="breed-info">Selecciona una raza para comenzar.</p>
+        </div>
+        <button id="more-button" class="btn btn-secondary hidden">
+          Cargar más
+        </button>
+      </div>
+
+      <div id="breed-gallery" class="gallery"></div>
+    </section>
+
+    <!-- FAVORITOS -->
+    <section id="favorites-section" class="page-section hidden">
+      <div class="section-heading">
+        <div>
+          <h2>Tu colección personal ♥</h2>
+          <p>Todos los perros que has guardado.</p>
+        </div>
+      </div>
+
+      <div id="favorites-gallery" class="gallery"></div>
+    </section>
+  </main>
+
+  <footer>
+    <p>
+      Imágenes proporcionadas por
+      <a href="https://dog.ceo/dog-api/" target="_blank"
+         rel="noopener noreferrer">Dog CEO API</a>.
+    </p>
+  </footer>
+</body>
+</html>
